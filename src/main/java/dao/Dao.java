@@ -26,5 +26,19 @@ public class Dao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}		
+	}	
+	public void addUser(String username, String pw, String salt) {
+		String sql = "insert into useraccount (username, hashedpassword, salt) values (?,?,?)";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, username);
+			stmt.setString(2, pw);
+			stmt.setString(3, salt);
+			
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
