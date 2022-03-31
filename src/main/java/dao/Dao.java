@@ -41,4 +41,37 @@ public class Dao {
 			e.printStackTrace();
 		}
 	}
+	public String getUserSalt(String username) {
+		String result = "";
+		String sql = "select salt from useraccount where username = ?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getString("salt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	public String getUserPasswordHash(String username) {
+		String result = "";
+		String sql = "select hashedpassword from useraccount where username = ?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getString("hashedpassword");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 }
