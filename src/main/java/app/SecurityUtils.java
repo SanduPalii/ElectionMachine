@@ -24,4 +24,20 @@ public class SecurityUtils {
 		}
 		return result;
 	}
+	
+	public static String getSalt() {
+		String result = "";
+		SecureRandom rd = new SecureRandom();
+		byte[] salt = new byte[16];
+		rd.nextBytes(salt);
+		
+		result = Base64.getEncoder().encodeToString(salt);
+		return result;
+	}
+	
+	public static boolean isPasswordOk(String storedHash, String password, String storedSalt) {
+		if (storedHash.equals(getPasswordHashed(password, storedSalt))) {
+			return true;
+		} return false;
+	}
 }
