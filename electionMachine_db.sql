@@ -7,7 +7,7 @@
 
 -- create a user and user's password
 -- credentials pena/kukkuu has all privileges to all all tables of database vaalikone (exept grant privilege)
-grant all on vaalikone.* to sandu@localhost;
+grant all on vaalikone.* to sonny@localhost;
 
 -- if there exists database vaalikone, drop it
 drop database if exists vaalikone;
