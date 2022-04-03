@@ -7,7 +7,7 @@
 
 -- create a user and user's password
 -- credentials pena/kukkuu has all privileges to all all tables of database vaalikone (exept grant privilege)
-grant all on vaalikone.* to sonny@localhost;
+grant all on vaalikone.* to sandu@localhost;
 
 -- if there exists database vaalikone, drop it
 drop database if exists vaalikone;
@@ -121,3 +121,10 @@ INSERT INTO VASTAUKSET VALUES  (1, 17, 4, "ehdokkaan 1 vastaus kysymykseen 17");
 INSERT INTO VASTAUKSET VALUES  (1, 18, 4, "ehdokkaan 1 vastaus kysymykseen 18");
 INSERT INTO VASTAUKSET VALUES  (1, 19, 3, "ehdokkaan 1 vastaus kysymykseen 19");
 INSERT INTO VASTAUKSET VALUES  (2, 1, 3, "ehdokkaan 2 vastaus kysymykseen 1");
+
+create table useraccount(
+id int not null auto_increment primary key,
+username varchar(100) not null,
+hashedpassword varchar(100) not null,
+salt varchar(100) not null
+);
