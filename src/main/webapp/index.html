@@ -1,12 +1,156 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html>
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <title>Hello App Engine</title>
-  </head>
+    <title>Election Form</title>
+    <style>
+    
+      html, body 
+      {
+      min-height: 100%;
+      }
+      body, div, form, input, textarea, label { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      
+      h1
+      {
+      position: absolute;
+      margin: 0;
+      line-height: 45px;
+      font-size: 45px;
+      color: #fff;
+      z-index: 2;
+      text-decoration: underline;     
+      }
+      
+      .ElectionMachine
+      {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      
+      form 
+      {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #eee;
+      }
+      
+      .banner {
+      position: relative;
+      height: 250px;
+      background-image: url("/uploads/media/default/0001/02/4e42b3735b93106f8167f9cfe092931dba56df55.jpeg");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      
+      .banner::after 
+      {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.4); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      
+      .red 
+      {
+      color: red;
+      }
+     
+      .btn-vote
+      {
+      margin-top: 10px;
+      text-align: center;
+      }
+      
+      button 
+      {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #aa1409;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
 
+	  table 
+      {
+      font-family: arial, sans-serif;
+      border-collapse: collapre;
+      width: 25%;
+      }
+
+      td, th 
+      {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      }
+      
+      #p1
+      {
+      text-decoration: underline;     
+      text-decoration-color: gray;  
+      }
+      
+      .AdminPrivs
+      {
+      text-align: right;
+      }
+      
+      .AdminLogin
+      {
+      text-align: right;
+      }
+      
+      hr 
+      {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 0;
+      }
+      
+      
+    </style>
+  </head>
   <body>
-    <h1>Hello App Engine!</h1>
+    <div class="ElectionMachine">
+      <form>
+        <div class="banner">
+          <h1>Election Form</h1>
+        </div>
+        <hr>
+        <p id="p1"> 
+        Please Select A Candidate
+        <br>
+        Candidate List: 
+        </p>
+
+          <div class="TableofCanditates">
+          	<table>
+           		<tr>    
+           		
+					<td><a>Donald Trump</a></td>
+
 
     <table>
       <tr>
@@ -26,5 +170,44 @@
     	<input type="password" name="password" value="">
     	<input type="submit" name="send" value="Add">
     </form>
+
+      			</tr>
+      			<tr>    
+      			
+					<td><a>Monty Python</a></td>
+					
+      			</tr>
+      			<tr>    
+      			
+					<td><a>Bob Ross</a></td>
+					
+      			</tr>
+          	</table>
+          </div>
+        <div class="btn-vote">
+        <button onClick="location.href='VotedFile.HTML'" type="button">Vote</button>
+        </div>
+        <hr>
+        <div class=AdminPrivs>
+        
+        	<div class=addC>
+        		<button type="submit" href="/addCpage">AddC</button>
+        	</div>
+	        	
+	         <div class=editC>
+         		<button type="submit" href="/editCpage">EditC</button>
+        	</div>
+        	
+         	<div class=removeC>
+         		<button type="submit" href="/removeCpage">RemoveC</button>
+        	</div>
+        </div>
+        <div class="AdminLogin">
+        	<p>Admin Login</p>
+        	<button type="submit" href="/AdminLoginPage">Login</button>
+        </div>
+      </form>
+    </div>
+
   </body>
 </html>
