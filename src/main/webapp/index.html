@@ -26,6 +26,7 @@
       font-size: 45px;
       color: #fff;
       z-index: 2;
+      text-decoration: underline;     
       }
       
       .ElectionMachine
@@ -100,39 +101,90 @@
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
-		}
+      }
+      
+      #p1
+      {
+      text-decoration: underline;     
+      text-decoration-color: gray;  
+      }
+      
+      .AdminPrivs
+      {
+      text-align: right;
+      }
+      
+      .AdminLogin
+      {
+      text-align: right;
+      }
+      
+      hr 
+      {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 0;
+      }
+      
       
     </style>
   </head>
   <body>
     <div class="ElectionMachine">
-      <form action="/">
+      <form>
         <div class="banner">
           <h1>Election Form</h1>
         </div>
-          <u><p>Please Select Your Chosen Candidate</p></u>
-          <u><p>Name of Candidate</p></u>
+        <hr>
+        <p id="p1"> 
+        Please Select A Candidate
+        <br>
+        Candidate List: 
+        </p>
+
           <div class="TableofCanditates">
           	<table>
            		<tr>    
            		
-					<td><a href='/c1'>Donald Trump</a></td>
+					<td><a>Donald Trump</a></td>
 
       			</tr>
       			<tr>    
       			
-					<td><a href='/c2'>Monty Python</a></td>
+					<td><a>Monty Python</a></td>
 					
       			</tr>
       			<tr>    
       			
-					<td><a href='/c3'>Bob Ross</a></td>
+					<td><a>Bob Ross</a></td>
 					
       			</tr>
           	</table>
           </div>
         <div class="btn-vote">
-          <button type="submit" href="/">Vote</button>
+        <button onClick="location.href='VotedFile.HTML'" type="button">Vote</button>
+        </div>
+        <hr>
+        <div class=AdminPrivs>
+        
+        	<div class=addC>
+        		<button type="submit" href="/addCpage">AddC</button>
+        	</div>
+	        	
+	         <div class=editC>
+         		<button type="submit" href="/editCpage">EditC</button>
+        	</div>
+        	
+         	<div class=removeC>
+         		<button type="submit" href="/removeCpage">RemoveC</button>
+        	</div>
+        </div>
+        <div class="AdminLogin">
+        	<p>Admin Login</p>
+        	<button type="submit" href="/AdminLoginPage">Login</button>
         </div>
       </form>
     </div>
