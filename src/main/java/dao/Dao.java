@@ -3,6 +3,11 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import data.Candidate;
+
 import java.sql.PreparedStatement;
 
 
@@ -11,7 +16,7 @@ public class Dao {
 	public Dao() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sandu", "password");
+			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sonny", "password");
 		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,5 +76,32 @@ public class Dao {
 		}
 		return result;
 	}
+	
+	public ArrayList<Candidate> readAllCandidates() {
+		ArrayList<Candidate> list=new ArrayList<>();
+		Statement stmt=null;
+		int count=0;
+		try {
+			stmt = conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from EHDOKKAAT");
+			while (rs.next()) {
+				Candidate candidate=new Candidate();
+				candidate.setId(rs.getInt("EHDOKAS_ID"));
+				candidate.setLastName(rs.getString("SUKUNIMI"));
+				candidate.setFirstName(rs.getString("ETUNIMI"));
+				candidate.setPAlign(rs.getString("PUOLUE"));
+				candidate.setState(rs.getString("KOTIPAIKKAKUNTA"));
+				candidate.setAge(rs.getInt("IKA"));
+				candidate.setWhyQ(rs.getString("MIKSI_EDUSKUNTAAN"));
+				candidate.setBecauseAnswer(rs.getString("MITA_ASIOITA_HALUAT_EDISTAA"));
+				list.add(candidate);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	
 }
