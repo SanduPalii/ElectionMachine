@@ -38,7 +38,7 @@
 		<td>${candidate.MIKSI_EDUSKUNTAAN}</td>
 		<td>${candidate.MITA_ASIOITA_HALUAT_EDISTAA}</td>
 		
-		 <a href="/editgame?id=${candidate.id}">Edit</a> 
+		 <%-- <a href="/editgame?id=${candidate.id}">Edit</a> --%> 
 	</tr>
 </c:forEach>
 </table>
