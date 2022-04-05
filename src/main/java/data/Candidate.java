@@ -24,14 +24,12 @@ public class Candidate{
 		this.lName = lName;
 	}
 	
-	
 	public String getFirstName() {
 		return fName;
 	}
 	public void setFirstName(String fName) {
 		this.fName = fName;
 	}
-	
 	
 	public String getPAlign() {
 		return fName;
