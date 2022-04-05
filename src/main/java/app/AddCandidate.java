@@ -72,16 +72,12 @@ public class AddCandidate extends HttpServlet {
 		// TODO Auto-generated method stub
 		Candidate candidate=new Candidate();
 		
-		//candidate.setId(request.getParameter("EHDOKAS_ID"));
-		
+		candidate.setId(Integer.parseInt(request.getParameter("EHDOKAS_ID")));
 		candidate.setLastName(request.getParameter("SUKUNIMI"));
 		candidate.setFirstName(request.getParameter("ETUNIMI"));
 		candidate.setPAlign(request.getParameter("PUOLUE"));
 		candidate.setState(request.getParameter("KOTIPAIKKAKUNTA"));
-		
-		// needs to be configured
-		// candidate.setAge(request.getParameter("IKA"));
-		
+		candidate.setId(Integer.parseInt(request.getParameter("IKA")));
 		candidate.setWhyQ(request.getParameter("MIKSI_EDUSKUNTAAN"));
 		candidate.setBecauseAnswer(request.getParameter("MITA_ASIOITA_HALUAT_EDISTAA"));
 		return candidate;
