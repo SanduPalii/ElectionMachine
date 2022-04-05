@@ -2,147 +2,17 @@
 <html>
   <head>
     <title>Election Form</title>
-    <style>
-    
-      html, body 
-      {
-      min-height: 100%;
-      }
-      body, div, form, input, textarea, label { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      line-height: 22px;
-      }
-      
-      h1
-      {
-      position: absolute;
-      margin: 0;
-      line-height: 45px;
-      font-size: 45px;
-      color: #fff;
-      z-index: 2;
-      text-decoration: underline;     
-      }
-      
-      .ElectionMachine
-      {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 20px;
-      }
-      
-      form 
-      {
-      width: 100%;
-      padding: 20px;
-      border-radius: 6px;
-      background: #eee;
-      }
-      
-      .banner {
-      position: relative;
-      height: 250px;
-      background-image: url("/uploads/media/default/0001/02/4e42b3735b93106f8167f9cfe092931dba56df55.jpeg");  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      
-      .banner::after 
-      {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.4); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      }
-      
-      .red 
-      {
-      color: red;
-      }
-     
-      .btn-vote
-      {
-      margin-top: 10px;
-      text-align: center;
-      }
-      
-      button 
-      {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px; 
-      background: #aa1409;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-
-	  table 
-      {
-      font-family: arial, sans-serif;
-      border-collapse: collapre;
-      width: 25%;
-      }
-
-      td, th 
-      {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-      }
-      
-      #p1
-      {
-      text-decoration: underline;     
-      text-decoration-color: gray;  
-      }
-      
-      .AdminPrivs
-      {
-      text-align: right;
-      }
-      
-      .AdminLogin
-      {
-      text-align: right;
-      }
-      
-      hr 
-      {
-      display: block;
-      height: 1px;
-      border: 0;
-      border-top: 1px solid #ccc;
-      margin: 1em 0;
-      padding: 0;
-      }
-      
-      
-    </style>
+     <link rel = "stylesheet" href = "/stylesheets/style.css">
   </head>
+  <header>
+   <h1>Election Form</h1>
+  </header>
   <body>
+  <hr>
     <div class="ElectionMachine">
       <form>
-        <div class="banner">
-          <h1>Election Form</h1>
-        </div>
-        <hr>
-        <p id="p1"> 
-        Please Select A Candidate
-        <br>
-        Candidate List: 
+        <p> 
+        Please Select The Candidate You Will Vote For.
         </p>
 
           <div class="TableofCanditates">
@@ -150,18 +20,7 @@
            		<tr>    
            		
 					<td><a>Donald Trump</a></td>
-
-
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href='/hello'>The servlet</a></td>
-      </tr>
-    </table>
- 
-
+					
       			</tr>
       			<tr>    
       			
@@ -199,6 +58,7 @@
         </div>
       </form>
     </div>
+    <div class="AdminUserPass">
    <form action="/check" method="post">
     	<input type="text" name="username" value="">
     	<input type="password" name="password" value="">
@@ -209,5 +69,9 @@
     	<input type="password" name="password" value="">
     	<input type="submit" name="send" value="Add">
     </form>
+    </div>
   </body>
+  <hr>
+  <footer></footer>
+  
 </html>
