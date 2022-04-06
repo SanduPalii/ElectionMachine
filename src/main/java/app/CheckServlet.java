@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.Dao;
 
@@ -39,6 +40,9 @@ public class CheckServlet extends HttpServlet{
 		
 		if (SecurityUtils.isPasswordOk(hashpw, password, salt)) {
 			response.getWriter().println("Login success!!!");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("LoggedUser", uname);
 		} else {
 			response.getWriter().println("Login FAILED");
 		}
