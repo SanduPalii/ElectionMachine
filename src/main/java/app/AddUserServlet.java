@@ -2,6 +2,7 @@ package app;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +27,7 @@ public class AddUserServlet extends HttpServlet {
 
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws IOException {
+			throws IOException, ServletException {
 		Dao dao = new Dao();
 
 		String uname = request.getParameter("username");
@@ -37,5 +38,8 @@ public class AddUserServlet extends HttpServlet {
 
 		dao.addUser(uname, hashpw, salt);
 		dao.close();
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.html");
+		rd.forward(request, response);
 	}
 }
