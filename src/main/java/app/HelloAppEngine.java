@@ -28,7 +28,7 @@ public class HelloAppEngine extends HttpServlet {
     	response.getWriter().println("User not logged");
     }
 
-    response.getWriter().print("<br><a href=\"index.html\">Back</a>");
+    response.getWriter().println("<br><a href=\"index.html\">Back</a>");
 
   }
 }
