@@ -2,6 +2,7 @@ package app;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,7 @@ public class CheckServlet extends HttpServlet{
 	}
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-		throws IOException {
+		throws IOException, ServletException {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		
@@ -41,6 +42,8 @@ public class CheckServlet extends HttpServlet{
 		} else {
 			response.getWriter().println("Login FAILED");
 		}
+		RequestDispatcher rd = request.getRequestDispatcher("index.html");
+		rd.forward(request, response);
 	}
 
 }
