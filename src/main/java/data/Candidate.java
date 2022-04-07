@@ -33,10 +33,10 @@ public class Candidate{
 	}
 	
 	
-	public String getPAlign() {
+	public String getPalign() {
 		return fName;
 	}
-	public void setPAlign(String pAlign) {
+	public void setPalign(String pAlign) {
 		this.pAlign = pAlign;
 	}
 	
