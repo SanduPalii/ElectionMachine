@@ -17,7 +17,7 @@ public class Dao {
 	public Dao() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sandu", "password");
+			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sonny", "password");
 		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,7 +83,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into candidatetable(C.ID, Last Name, First Name, Politicial Alignment, Home State, Age, Why?, Because) values("+candidate.getId()+", "+candidate.getLastName()+", "+candidate.getFirstName()+", "+candidate.getPAlign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer());
+			count=stmt.executeUpdate("insert into candidatetable(C.ID, Last Name, First Name, Politicial Alignment, Home State, Age, Why?, Because) values("+candidate.getId()+", "+candidate.getLastName()+", "+candidate.getFirstName()+", "+candidate.getPalign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
