@@ -24,8 +24,7 @@ public class EditCandidate extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		
-		
+				
 		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 		
