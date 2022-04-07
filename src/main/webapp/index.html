@@ -20,16 +20,63 @@
 
 
 
+
+
+          <div class="TableofCanditates">
+          	<table>
+				<tr>
+				<td><a href='/showdata'>showdata</a></td>
+				</tr>
+				       
+      			
+          	</table>
+          </div>
+
         <div class="btn-vote">
         <button onClick="location.href='VotedFile.HTML'" type="button">Vote</button>
         </div>
         <hr>
+
+        <div class=AdminPrivs>
+        
+        	<div class=addC>
+        		<button type="submit" href="/addCpage">AddC</button>
+        	</div>
+	        	
+	         <div class=editC>
+         		<button type="submit" href="/editCpage">EditC</button>
+        	</div>
+        	
+         	<div class=removeC>
+         		<button type="submit" href="/removeCpage">RemoveC</button>
+        	</div>
+        
+        </div>
+
         <div class="AdminLogin">
         	<p>Admin Login</p>
         	<button onClick="location.href='AdminPage.HTML'" type="button">Login</button>
         </div>
       </form>
     </div>
+
+   <form action="/check" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Check">
+    </form>
+    <form action="/add" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Add">
+    </form>
+    <br>
+    <br>
+    <a href="/hello">Check if user is logged in</a>
+    <br>
+    <br>
+    <a href="/logout">Logout</a>
+
   </body>
   <hr>
   <footer>
