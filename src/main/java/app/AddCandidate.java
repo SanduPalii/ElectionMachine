@@ -75,7 +75,7 @@ public class AddCandidate extends HttpServlet {
 		candidate.setId(Integer.parseInt(request.getParameter("EHDOKAS_ID")));
 		candidate.setLastName(request.getParameter("SUKUNIMI"));
 		candidate.setFirstName(request.getParameter("ETUNIMI"));
-		candidate.setPAlign(request.getParameter("PUOLUE"));
+		candidate.setPalign(request.getParameter("PUOLUE"));
 		candidate.setState(request.getParameter("KOTIPAIKKAKUNTA"));
 		candidate.setId(Integer.parseInt(request.getParameter("IKA")));
 		candidate.setWhyQ(request.getParameter("MIKSI_EDUSKUNTAAN"));

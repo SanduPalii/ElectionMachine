@@ -27,16 +27,16 @@
 	<th>Because</th>
 </tr>
 
-<c:forEach var="candidate" items="${sessionScope.allcandidates }">
+<c:forEach var="candidate" items="${sessionScope.allcandidates}">
 	<tr>
-		<td>${candidate.EHDOKAS_ID}</td>
-		<td>${candidate.SUKUNIMI}</td>
-		<td>${candidate.ETUNIMI}</td>
-		<td>${candidate.PUOLUE}</td>
-		<td>${candidate.KOTIPAIKKAKUNTA}</td>
-		<td>${candidate.IKA}</td>
-		<td>${candidate.MIKSI_EDUSKUNTAAN}</td>
-		<td>${candidate.MITA_ASIOITA_HALUAT_EDISTAA}</td>
+		<td>${candidate.id}</td>
+		<td>${candidate.lastName}</td>
+		<td>${candidate.firstName}</td>
+		<td>${candidate.palign}</td>
+		<td>${candidate.state}</td>
+		<td>${candidate.age}</td>
+		<td>${candidate.whyQ}</td>
+		<td>${candidate.becauseAnswer}</td>
 		
 		 <%-- <a href="/editgame?id=${candidate.id}">Edit</a> --%> 
 	</tr>
