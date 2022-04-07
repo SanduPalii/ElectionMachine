@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Page</title>
+<link rel = "stylesheet" href = "/stylesheets/style.css">
+</head>
+
+<header>
+<h1>Admin Login</h1>
+</header>
+
+<body>
+<p>
+Please Enter Username & Password.
+</p>
+        
+        <div class="AdminUserPass">
+   <form action="/check" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Check">
+    </form>
+    <form action="/add" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Add">
+    </form>
+    </div>
+    <hr>
+    <div class=AdminPrivs>
+    		<div class=addC>
+        		<button type="submit" href="/addCpage">Add Candidates</button>
+        	</div>
+	        <hr>
+	         <div class=editC>
+         		<button type="submit" href="/editCpage">Edit Candidates</button>
+        	</div>
+        	<hr>
+         	<div class=removeC>
+         		<button type="submit" href="/removeCpage">Remove Candidates</button>
+        	</div>    
+        	<hr>
+        	<div class=showC>
+         		<button type="submit" href="/removeCpage">Show Candidates </button>
+        	</div>    
+    </div>
+</body>
+
+<footer>
+<button onClick="location.href='index.html'" type="button">Back To Home</button>
+</footer>
+
+</html>
