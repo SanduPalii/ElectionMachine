@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import dao.Dao;
 import data.Candidate;
 
 import java.sql.PreparedStatement;
@@ -77,6 +78,19 @@ public class Dao {
 		return result;
 	}
 	
+	public int saveCandidate(Candidate candidate) {
+		Statement stmt=null;
+		int count=0;
+		try {
+			stmt = conn.createStatement();
+			count=stmt.executeUpdate("insert into candidatetable(C.ID, Last Name, First Name, Politicial Alignment, Home State, Age, Why?, Because) values("+candidate.getId()+", "+candidate.getLastName()+", "+candidate.getFirstName()+", "+candidate.getPAlign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
 	public ArrayList<Candidate> readAllCandidates() {
 		ArrayList<Candidate> list=new ArrayList<>();
 		Statement stmt=null;
@@ -103,5 +117,32 @@ public class Dao {
 		return list;
 	}
 	
+	public Candidate getCandidateInfo(int id) {
+		Candidate result = null;
+		String sql = "select * from gametable where id = ?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+						
+			stmt.setInt(1, id);
+			
+			ResultSet resultset = stmt.executeQuery();
+			
+			if (resultset.next()) {
+				result = new Candidate();
+				result.setId(resultset.getInt("EHDOKAS_ID"));
+				result.setLastName(resultset.getString("SUKUNIMI"));
+				result.setFirstName(resultset.getString("ETUNIMI"));
+				result.setPAlign(resultset.getString("PUOLUE"));
+				result.setState(resultset.getString("KOTIPAIKKAKUNTA"));
+				result.setAge(resultset.getInt("IKA"));
+				result.setWhyQ(resultset.getString("MIKSI_EDUSKUNTAAN"));
+				result.setBecauseAnswer(resultset.getString("MITA_ASIOITA_HALUAT_EDISTAA"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 }
