@@ -103,7 +103,7 @@ public class Dao {
 				candidate.setId(rs.getInt("EHDOKAS_ID"));
 				candidate.setLastName(rs.getString("SUKUNIMI"));
 				candidate.setFirstName(rs.getString("ETUNIMI"));
-				candidate.setPAlign(rs.getString("PUOLUE"));
+				candidate.setPalign(rs.getString("PUOLUE"));
 				candidate.setState(rs.getString("KOTIPAIKKAKUNTA"));
 				candidate.setAge(rs.getInt("IKA"));
 				candidate.setWhyQ(rs.getString("MIKSI_EDUSKUNTAAN"));
@@ -132,7 +132,7 @@ public class Dao {
 				result.setId(resultset.getInt("EHDOKAS_ID"));
 				result.setLastName(resultset.getString("SUKUNIMI"));
 				result.setFirstName(resultset.getString("ETUNIMI"));
-				result.setPAlign(resultset.getString("PUOLUE"));
+				result.setPalign(resultset.getString("PUOLUE"));
 				result.setState(resultset.getString("KOTIPAIKKAKUNTA"));
 				result.setAge(resultset.getInt("IKA"));
 				result.setWhyQ(resultset.getString("MIKSI_EDUSKUNTAAN"));
