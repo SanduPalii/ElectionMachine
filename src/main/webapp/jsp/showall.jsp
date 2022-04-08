@@ -38,7 +38,7 @@
 		<td>${candidate.whyQ}</td>
 		<td>${candidate.becauseAnswer}</td>
 		
-		 <%-- <a href="/editgame?id=${candidate.id}">Edit</a> --%> 
+		 <a href="/editcandidate?id=${candidate.id}">Edit</a>
 	</tr>
 </c:forEach>
 </table>

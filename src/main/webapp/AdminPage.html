@@ -15,18 +15,7 @@
 Please Enter Username & Password.
 </p>
         
-        <div class="AdminUserPass">
-   <form action="/check" method="post">
-    	<input type="text" name="username" value="">
-    	<input type="password" name="password" value="">
-    	<input type="submit" name="send" value="Check">
-    </form>
-    <form action="/add" method="post">
-    	<input type="text" name="username" value="">
-    	<input type="password" name="password" value="">
-    	<input type="submit" name="send" value="Add">
-    </form>
-    </div>
+
     
     <div class=Loggedin>
     <br>
@@ -44,7 +33,7 @@ Please Enter Username & Password.
         	</div>
 	        <hr>
 	         <div class=editC>
-         		<button type="submit" href="/editCpage">Edit Candidates</button>
+         		<button type="button" onClick="location.href='/editcandidate'">Edit Candidates</button>
         	</div>
         	<hr>
          	<div class=removeC>
@@ -54,6 +43,18 @@ Please Enter Username & Password.
         	<div class=showC>
          		<button onClick="location.href='/showdata'" type="button">Show Candidates</button>
         	</div>    
+    </div>
+            <div class="AdminUserPass">
+   <form action="/check" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Check">
+    </form>
+    <form action="/add" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Add">
+    </form>
     </div>
 </body>
 
