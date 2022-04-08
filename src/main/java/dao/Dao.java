@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import dao.Dao;
 import data.Candidate;
 
+
 import java.sql.PreparedStatement;
 
 
@@ -17,7 +18,7 @@ public class Dao {
 	public Dao() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sonny", "password");
+			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sandu", "password");
 		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,7 +84,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into candidatetable(C.ID, Last Name, First Name, Politicial Alignment, Home State, Age, Why?, Because) values("+candidate.getId()+", "+candidate.getLastName()+", "+candidate.getFirstName()+", "+candidate.getPalign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer());
+			count=stmt.executeUpdate("insert into EHDOKKAAT(EHDOKAS_ID, SUKUNIMI, ETUNIMI, PUOLUE, KOTIPAIKKAKUNTA, IKA, MIKSI_EDUSKUNTAAN, MITA_ASIOITA_HALUAT_EDISTAA) values("+candidate.getId()+", "+candidate.getLastName()+", "+candidate.getFirstName()+", "+candidate.getPalign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -119,7 +120,7 @@ public class Dao {
 	
 	public Candidate getCandidateInfo(int id) {
 		Candidate result = null;
-		String sql = "select * from gametable where id = ?";
+		String sql = "select * from EHDOKKAAT where EHDOKAS_ID = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 						
@@ -143,6 +144,31 @@ public class Dao {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public int updateCandidate(Candidate candidate) {
+		int count = 0;
+		String sql = "update EHDOKKAAT set SUKUNIMI = ?, ETUNIMI = ?, PUOLUE = ?, KOTIPAIKKAKUNTA = ?, IKA = ?, MIKSI_EDUSKUNTAAN = ?, MITA_ASIOITA_HALUAT_EDISTAA = ?, where EHDOKAS_ID = ?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, candidate.getLastName());
+			stmt.setString(2, candidate.getFirstName());
+			stmt.setString(3, candidate.getPalign());
+			stmt.setString(4, candidate.getState());
+			stmt.setInt(5, candidate.getAge());
+			stmt.setString(6, candidate.getWhyQ());
+			stmt.setString(7, candidate.getBecauseAnswer());
+			
+			
+			stmt.setInt(8, candidate.getId());
+			
+			count = stmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return count;
 	}
 	
 }
