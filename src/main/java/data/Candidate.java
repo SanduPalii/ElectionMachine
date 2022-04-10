@@ -1,5 +1,8 @@
 package data;
-public class Candidate{
+
+import java.io.Serializable;
+
+public class Candidate implements Serializable{
 	private int id;
 	private String lName;
 	private String fName;

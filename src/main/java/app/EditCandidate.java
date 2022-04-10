@@ -29,7 +29,7 @@ public class EditCandidate extends HttpServlet {
 		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 		
-		String idValue = request.getParameter("EHDOKAS_ID");
+		String idValue = request.getParameter("id");
 		
 		if ( idValue != null ) {
 			try {
@@ -68,8 +68,8 @@ public class EditCandidate extends HttpServlet {
 		dao.close();
 		
 		// Back to list after actions
-		//RequestDispatcher rd = request.getRequestDispatcher("/showdata");
-		//rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("/showdata");
+		rd.forward(request, response);
 		response.sendRedirect("/editcandidate");
 	}
 	

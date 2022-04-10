@@ -26,7 +26,7 @@
 	<th>Why?</th>
 	<th>Because</th>
 </tr>
-<a href="addcandidate"><button class="button" type="button">Add Candidates</button></a>
+<a href="/form.html"><button class="button" type="button">Add Candidates</button></a>
 <c:forEach var="candidate" items="${sessionScope.allcandidates}">
 	<tr>
 		<td>${candidate.id}</td>
@@ -37,8 +37,8 @@
 		<td>${candidate.age}</td>
 		<td>${candidate.whyQ}</td>
 		<td>${candidate.becauseAnswer}</td>
-		<a href="/editcandidate?id=${candidate.id}">Edit</a>
-		 
+		<td><a href="/editcandidate?id=${candidate.id}">Edit</a></td>
+		<td><a href="/deletecandidate?id=${candidate.id}">Delete</a></td> 
 	</tr>
 	
 </c:forEach>
