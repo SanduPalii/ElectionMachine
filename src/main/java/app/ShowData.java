@@ -28,7 +28,7 @@ public class ShowData extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		Dao dao = new Dao();
-		ArrayList<Candidate> candidates = dao.readAllCandidates();
+		ArrayList<Candidate> candidates = dao.readAllCandidate();
 		
 		session.setAttribute("allcandidates", candidates);
 		

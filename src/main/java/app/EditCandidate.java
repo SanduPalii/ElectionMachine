@@ -48,7 +48,7 @@ public class EditCandidate extends HttpServlet {
 			}
 		} else {
 			// Back to list
-			response.sendRedirect("/editcandidate");
+			response.sendRedirect("/showdata");
 			
 		}
 	
@@ -68,22 +68,22 @@ public class EditCandidate extends HttpServlet {
 		dao.close();
 		
 		// Back to list after actions
-		RequestDispatcher rd = request.getRequestDispatcher("/showdata");
-		rd.forward(request, response);
-		response.sendRedirect("/editcandidate");
+//		RequestDispatcher rd = request.getRequestDispatcher("/showdata");
+//		rd.forward(request, response);
+		response.sendRedirect("/showdata");
 	}
 	
 	private Candidate readCandidate(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Candidate candidate=new Candidate();
-		candidate.setId(Integer.parseInt(request.getParameter("EHDOKAS_ID")));
 		candidate.setLastName(request.getParameter("SUKUNIMI"));
 		candidate.setFirstName(request.getParameter("ETUNIMI"));
 		candidate.setPalign(request.getParameter("PUOLUE"));
 		candidate.setState(request.getParameter("KOTIPAIKKAKUNTA"));
-		candidate.setId(Integer.parseInt(request.getParameter("IKA")));
+		candidate.setAge(Integer.parseInt(request.getParameter("IKA")));
 		candidate.setWhyQ(request.getParameter("MIKSI_EDUSKUNTAAN"));
 		candidate.setBecauseAnswer(request.getParameter("MITA_ASIOITA_HALUAT_EDISTAA"));
+		candidate.setId(Integer.parseInt(request.getParameter("EHDOKAS_ID")));
 		return candidate;
 	}
 }
