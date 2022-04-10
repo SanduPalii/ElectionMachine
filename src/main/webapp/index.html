@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <title>Election Form</title>
      <link rel = "stylesheet" href = "/stylesheets/style.css">
   </head>
@@ -8,22 +9,37 @@
    <h1>Election Form</h1>
   </header>
   <body>
+  <div class="AdminUserPass">
+   <form action="/check" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Check">
+    </form>
+    <form action="/add" method="post">
+    	<input type="text" name="username" value="">
+    	<input type="password" name="password" value="">
+    	<input type="submit" name="send" value="Add">
+    </form>
+    </div>  
+    <div class=Loggedin>
+    <br>
+    <button onClick="location.href='/hello'" type="button">Logged in?</button>
+    <br>
+    <br>
+    <button onClick="location.href='/logout'" type="button">Logout?</button>
+    
+    </div>
   <hr>
     <div class="ElectionMachine">
       <form>
         <p> 
         Please Select The Candidate You Will Vote For.
         </p>
-
+<hr>
         <div class="btn-vote">
-        <button onClick="location.href='VotedFile.HTML'" type="button">Vote</button>
+        <button onClick="location.href='/showdata'" type="button">Show all</button>
         </div>
-        <hr>
 
-        <div class="AdminLogin">
-        	<p>Admin Login</p>
-        	<button onClick="location.href='AdminPage.HTML'" type="button">Login</button>
-        </div>
       </form>
     </div>
   </body>

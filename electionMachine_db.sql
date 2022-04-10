@@ -3,7 +3,8 @@
 -- give a command 'source path\nameofsavedfile'
 --    where path is absolute path to the folder where the file exists, e.g. c:\temp
 --    and nameofsavedfile is the name of the saved file, e.g. vaalikone.txt
-
+select * from EHDOKKAAT;
+DESCRIBE EHDOKKAAT;
 
 -- create a user and user's password
 -- credentials pena/kukkuu has all privileges to all all tables of database vaalikone (exept grant privilege)
@@ -18,7 +19,7 @@ create database vaalikone;
 -- This line is to handle utf8 character needs (like ä and ö) if you have not set utf8 encoding already default for your mysql
 ALTER DATABASE vaalikone CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- use the database
+-- use the databaseuseraccount
 use vaalikone;
 
 -- these drops are not needed now (we droppped the whole database), but as an example how to drop a table
@@ -128,3 +129,5 @@ username varchar(100) not null,
 hashedpassword varchar(100) not null,
 salt varchar(100) not null
 );
+
+select * from useraccount;

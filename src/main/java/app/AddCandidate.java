@@ -51,7 +51,7 @@ public class AddCandidate extends HttpServlet {
 		
 		// Save value and query total list
 		dao.saveCandidate(candidate);
-		ArrayList<Candidate> list=dao.readAllCandidates();
+		ArrayList<Candidate> list=dao.readAllCandidate();
 		
 		// print output and close connection
 //		printCandidateList(out, list);
@@ -64,13 +64,13 @@ public class AddCandidate extends HttpServlet {
 		 * With a RequestDispatcher object is the htmlend.html file included to this servlet
 		 */
 		RequestDispatcher rd=request.getRequestDispatcher("/showdata");
-		rd.forward(request,  response);;
+		rd.forward(request, response);
 	}
 	
 	private void printCandidateList(PrintWriter out, ArrayList<Candidate> list) {
 		out.println("<ul>");
-		for (Candidate c:list) {
-			out.println("<li>"+c);
+		for (Candidate g:list) {
+			out.println("<li>"+g);
 		}
 		out.println("</ul>");
 	}
@@ -82,9 +82,17 @@ public class AddCandidate extends HttpServlet {
 		candidate.setFirstName(request.getParameter("fName"));
 		candidate.setPalign(request.getParameter("pAlign"));
 		candidate.setState(request.getParameter("hState"));
-		candidate.setId(Integer.parseInt(request.getParameter("cAge")));
+//		candidate.setAge(Integer.parseInt(request.getParameter("cAge")));
 		candidate.setWhyQ(request.getParameter("whyQuestion"));
 		candidate.setBecauseAnswer(request.getParameter("becauseAnswer"));
 		return candidate;
 	}
+	
+//	<!-- String lName=request.getParameter("SUKUNIMI");
+//	String fName=request.getParameter("ETUNIMI");
+//	String pAlign=request.getParameter("PUOLUE");
+//	String hState=request.getParameter("KOTIPAIKKAKUNTA");
+//	String cAge=request.getParameter("IKA");
+//	String whyQuestion=request.getParameter("MIKSI_EDUSKUNTAAN");
+//	String becauseAnswer=request.getParameter("MITA_ASIOITA_HALUAT_EDISTAA"); -->
 }

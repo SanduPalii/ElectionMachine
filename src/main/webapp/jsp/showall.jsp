@@ -25,6 +25,7 @@
 	<th>Age</th>
 	<th>Why?</th>
 	<th>Because</th>
+	<th>Actions</th>
 </tr>
 <a href="/form.html"><button class="button" type="button">Add Candidates</button></a>
 <c:forEach var="candidate" items="${sessionScope.allcandidates}">

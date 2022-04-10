@@ -12,8 +12,7 @@
 </head>
 <body>
 
-	<form action='./editform' method='post'>
-		C.ID: <input type='text' name='id' value='${sessionScope.candidate.id }'><br>
+	<form action='./editcandidate' method='post'>
 		Last Name: <input type='text' name='lName' value='${sessionScope.candidate.lastName }'><br>
 		First Name: <input type='text' name='fName' value='${sessionScope.candidate.firstName }'><br>
 		Political Alignment: <input type='text' name='pAlign' value='${sessionScope.candidate.palign }'><br>

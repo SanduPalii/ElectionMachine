@@ -5,13 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import dao.Dao;
-import data.Candidate;
-
-
 import java.sql.PreparedStatement;
 
+import data.Candidate;
 
 public class Dao {
 	private Connection conn;
@@ -84,7 +80,8 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into EHDOKKAAT(SUKUNIMI, ETUNIMI, PUOLUE, KOTIPAIKKAKUNTA, IKA, MIKSI_EDUSKUNTAAN, MITA_ASIOITA_HALUAT_EDISTAA) values('"+candidate.getLastName()+"', "+candidate.getFirstName()+", "+candidate.getPalign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer()+")");
+			count=stmt.executeUpdate("insert into EHDOKKAAT(SUKUNIMI, ETUNIMI, PUOLUE, KOTIPAIKKAKUNTA, IKA, MIKSI_EDUSKUNTAAN, MITA_ASIOITA_HALUAT_EDISTAA) "
+					+ "values('"+candidate.getLastName()+"', "+candidate.getFirstName()+", "+candidate.getPalign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer()+")");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -92,7 +89,7 @@ public class Dao {
 		return count;
 	}
 	
-	public ArrayList<Candidate> readAllCandidates() {
+	public ArrayList<Candidate> readAllCandidate() {
 		ArrayList<Candidate> list=new ArrayList<>();
 		Statement stmt=null;
 		int count=0;
@@ -148,7 +145,8 @@ public class Dao {
 	
 	public int updateCandidate(Candidate candidate) {
 		int count = 0;
-		String sql = "update EHDOKKAAT set SUKUNIMI = ?, ETUNIMI = ?, PUOLUE = ?, KOTIPAIKKAKUNTA = ?, IKA = ?, MIKSI_EDUSKUNTAAN = ?, MITA_ASIOITA_HALUAT_EDISTAA = ? where EHDOKAS_ID = ?";
+		String sql = "update EHDOKKAAT set SUKUNIMI = ?, ETUNIMI = ?, PUOLUE = ?, KOTIPAIKKAKUNTA = ?, "
+				+ "IKA = ?, MIKSI_EDUSKUNTAAN = ?, MITA_ASIOITA_HALUAT_EDISTAA = ? where EHDOKAS_ID = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
@@ -158,8 +156,7 @@ public class Dao {
 			stmt.setString(4, candidate.getState());
 			stmt.setInt(5, candidate.getAge());
 			stmt.setString(6, candidate.getWhyQ());
-			stmt.setString(7, candidate.getBecauseAnswer());
-			
+			stmt.setString(7, candidate.getBecauseAnswer());			
 			
 			stmt.setInt(8, candidate.getId());
 			
