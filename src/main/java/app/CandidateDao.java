@@ -115,7 +115,7 @@ public class CandidateDao {
 	        	}
 	        	 con.close();  
 	        }catch(Exception ex){ex.printStackTrace();}  
-	          
+	        
 	        return e;  
 	    }  
 	 public static List<Candidate> getAllCandidates(){

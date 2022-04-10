@@ -40,9 +40,9 @@ public class AddCandidate extends HttpServlet {
 		/*
 		 * With a RequestDispatcher object is the htmlstart.html file included to this servlet
 		 */
-		RequestDispatcher rd=request.getRequestDispatcher("staticpages/htmlstart.html");
-		rd.include(request,  response);;
-		
+//		RequestDispatcher rd=request.getRequestDispatcher("jsp/showall.jsp");
+//		rd.include(request,  response);
+//		
 		// Read parameters to Model
 		Candidate candidate = readCandidate(request);
 	
@@ -54,41 +54,37 @@ public class AddCandidate extends HttpServlet {
 		ArrayList<Candidate> list=dao.readAllCandidates();
 		
 		// print output and close connection
-		printCandidateList(out, list);
+//		printCandidateList(out, list);
 		dao.close();
 		
 		
-		out.println("<br><a href='./form.html'>Back to form</a>");
+//		out.println("<br><a href='./jsp/showall.jsp'>Back to form</a>");
 
 		/*
 		 * With a RequestDispatcher object is the htmlend.html file included to this servlet
 		 */
-		rd=request.getRequestDispatcher("staticpages/htmlend.html");
-		rd.include(request,  response);;
-	}
-
-
-	private Candidate readCandidate(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		Candidate candidate=new Candidate();
-		
-		candidate.setId(Integer.parseInt(request.getParameter("EHDOKAS_ID")));
-		candidate.setLastName(request.getParameter("SUKUNIMI"));
-		candidate.setFirstName(request.getParameter("ETUNIMI"));
-		candidate.setPalign(request.getParameter("PUOLUE"));
-		candidate.setState(request.getParameter("KOTIPAIKKAKUNTA"));
-		candidate.setId(Integer.parseInt(request.getParameter("IKA")));
-		candidate.setWhyQ(request.getParameter("MIKSI_EDUSKUNTAAN"));
-		candidate.setBecauseAnswer(request.getParameter("MITA_ASIOITA_HALUAT_EDISTAA"));
-		return candidate;
+		RequestDispatcher rd=request.getRequestDispatcher("/showdata");
+		rd.forward(request,  response);;
 	}
 	
 	private void printCandidateList(PrintWriter out, ArrayList<Candidate> list) {
 		out.println("<ul>");
-		for (Candidate g:list) {
-			out.println("<li>"+g);
+		for (Candidate c:list) {
+			out.println("<li>"+c);
 		}
 		out.println("</ul>");
 	}
 
+	private Candidate readCandidate(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		Candidate candidate=new Candidate();
+		candidate.setLastName(request.getParameter("lName"));
+		candidate.setFirstName(request.getParameter("fName"));
+		candidate.setPalign(request.getParameter("pAlign"));
+		candidate.setState(request.getParameter("hState"));
+		candidate.setId(Integer.parseInt(request.getParameter("cAge")));
+		candidate.setWhyQ(request.getParameter("whyQuestion"));
+		candidate.setBecauseAnswer(request.getParameter("becauseAnswer"));
+		return candidate;
+	}
 }

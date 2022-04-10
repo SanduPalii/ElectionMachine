@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="data.Candidate" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 </head>
 <body>
 <h4> Add Candidate</h4>
-	<form method="post" action="Process.jsp">
+	<form action='./addcandidate' method="post">
 	Last Name: <input type='text' name='lName'><br>
 	First Name: <input type='text' name='fName'><br>
 	Political Alignment: <input type='text' name='pAlign'><br>
@@ -17,7 +19,7 @@
 	Why?: <input type='text' name='whyQuestion'><br>
 	Because: <input type='text' name='becauseAnswer'><br>
 	
-	<a href="/jsp/UpdateCandidate.jsp" >Go back</a>
+	<a href="/showall.jsp" >Go back</a>
 	</form>
 </body>
 </html>
