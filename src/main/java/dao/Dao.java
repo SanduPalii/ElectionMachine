@@ -164,6 +164,7 @@ public class Dao {
 			stmt.setInt(8, candidate.getId());
 			
 			count = stmt.executeUpdate();
+			conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -171,4 +172,20 @@ public class Dao {
 		return count;
 	}
 	
+	public int delete(int id) {
+		int count = 0;		
+		try{  
+			 
+			PreparedStatement stmt = conn.prepareStatement("delete from EHDOKKAAT where id=?");
+			stmt.setInt(1,id);  
+            count=stmt.executeUpdate();  
+              
+            conn.close();  
+        }catch(Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}  
+          
+        return count;
+	}
 }
