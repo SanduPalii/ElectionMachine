@@ -12,6 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import dao.Dao;
 
+/**
+ * @author sandu
+ *
+ */
 @WebServlet(
 		name = "CheckServlet",
 		urlPatterns = {"/check"}

@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
 
+/**
+ * @author sandu
+ *
+ */
 @WebServlet(
 		name = "AddUserServlet",
 		urlPatterns = {"/add"}

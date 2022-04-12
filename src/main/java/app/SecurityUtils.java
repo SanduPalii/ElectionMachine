@@ -8,6 +8,10 @@ import java.util.Base64;
 import javax.servlet.http.HttpSession;
 
 
+/**
+ * @author sandu
+ *
+ */
 public class SecurityUtils {
 	
 	public static String getPasswordHashed(String password, String salt) {

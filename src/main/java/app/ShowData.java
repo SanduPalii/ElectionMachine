@@ -14,6 +14,10 @@ import javax.servlet.http.HttpSession;
 import dao.Dao;
 import data.Candidate;
 
+/**
+ * @author sonny
+ *
+ */
 @WebServlet(
 		name = "ShowData",
 		urlPatterns = {"/showdata"}

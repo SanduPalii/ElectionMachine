@@ -11,6 +11,10 @@ import javax.servlet.http.HttpSession;
 
 import dao.Dao;
 
+/**
+ * @author sandu
+ *
+ */
 @WebServlet("/DeleteServlet")  
 public class DeleteServlet extends HttpServlet {  
     public void doGet(HttpServletRequest request, HttpServletResponse response)   

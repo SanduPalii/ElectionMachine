@@ -10,6 +10,10 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * @author sandu
+ *
+ */
 @WebServlet(
         name = "Headers",
         urlPatterns = {"/headers"}

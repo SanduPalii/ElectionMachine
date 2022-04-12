@@ -2,6 +2,10 @@ package data;
 
 import java.io.Serializable;
 
+/**
+ * @author sonny
+ *
+ */
 public class Candidate implements Serializable{
 	private int id;
 	private String lName;

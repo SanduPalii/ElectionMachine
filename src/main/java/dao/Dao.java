@@ -9,12 +9,16 @@ import java.sql.PreparedStatement;
 
 import data.Candidate;
 
+/**
+ * @author sonny 30% /sandu 70%
+ * @
+ */
 public class Dao {
 	private Connection conn;
 	public Dao() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sandu", "password");
+			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "sonny", "password");
 		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

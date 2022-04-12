@@ -18,6 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 import data.Candidate;
 
+/**
+ * @author sonny
+ *
+ */
 @WebServlet(
 		name = "AddCandidate",
 		urlPatterns = {"/addcandidate"}
