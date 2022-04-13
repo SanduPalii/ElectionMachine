@@ -1,0 +1,125 @@
+@charset "ISO-8859-1";
+      html, body 
+      {
+      min-height: 100%;
+      }
+      body, div, form, input, textarea, label { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      
+      header
+      {
+      padding: 60px;
+      text-align: center;
+      background-color: #808080;
+      color: white;
+      font-size: 30px;
+      }
+
+      
+      footer
+      {
+      padding: 80px;
+      text-align: center;
+      background-color: #808080;
+      color: white;
+      font-size: 30px;
+      }
+      
+      h1
+      {
+      position: absolute;
+      margin: 0;
+      line-height: 45px;
+      font-size: 45px;
+      color: #fff;
+      z-index: 2;
+      text-decoration: underline;     
+      }
+      
+      .ElectionMachine
+      {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      
+      form 
+      {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #eee;
+      }
+      
+      .red 
+      {
+      color: red;
+      }
+     
+      .btn-vote
+      {
+      margin-top: 10px;
+      text-align: center;
+      }
+      
+      button 
+      {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #aa1409;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+
+	  table 
+      {
+      font-family: arial, sans-serif;
+      border-collapse: collapre;
+      width: 25%;
+      }
+
+      td, th 
+      {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      }
+      
+      #p1
+      {
+      text-decoration: underline;     
+      text-decoration-color: gray;  
+      }
+      
+      .AdminPrivs
+      {
+      text-align: right;
+      }
+      
+      .AdminLogin
+      {
+      text-align: right;
+      }
+      
+      hr 
+      {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 0;
+      }
+      

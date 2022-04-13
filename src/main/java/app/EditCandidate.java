@@ -76,14 +76,14 @@ public class EditCandidate extends HttpServlet {
 	private Candidate readCandidate(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Candidate candidate=new Candidate();
-		candidate.setLastName(request.getParameter("SUKUNIMI"));
-		candidate.setFirstName(request.getParameter("ETUNIMI"));
-		candidate.setPalign(request.getParameter("PUOLUE"));
-		candidate.setState(request.getParameter("KOTIPAIKKAKUNTA"));
-		candidate.setAge(Integer.parseInt(request.getParameter("IKA")));
-		candidate.setWhyQ(request.getParameter("MIKSI_EDUSKUNTAAN"));
-		candidate.setBecauseAnswer(request.getParameter("MITA_ASIOITA_HALUAT_EDISTAA"));
-		candidate.setId(Integer.parseInt(request.getParameter("EHDOKAS_ID")));
+		candidate.setLastName(request.getParameter("lName"));
+		candidate.setFirstName(request.getParameter("fName"));
+		candidate.setPalign(request.getParameter("pAlign"));
+		candidate.setState(request.getParameter("hState"));
+		candidate.setAge(Integer.parseInt(request.getParameter("cAge")));
+		candidate.setWhyQ(request.getParameter("whyQuestion"));
+		candidate.setBecauseAnswer(request.getParameter("becauseAnswer"));
+		candidate.setId(Integer.parseInt(request.getParameter("id")));
 		return candidate;
 	}
 }

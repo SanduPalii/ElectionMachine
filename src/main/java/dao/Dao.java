@@ -80,10 +80,22 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into EHDOKKAAT(SUKUNIMI, ETUNIMI, PUOLUE, KOTIPAIKKAKUNTA, IKA, MIKSI_EDUSKUNTAAN, MITA_ASIOITA_HALUAT_EDISTAA) "
-					+ "values('"+candidate.getLastName()+"', "+candidate.getFirstName()+", "+candidate.getPalign()+", "+candidate.getState()+", "+candidate.getAge()+", "+candidate.getWhyQ()+", "+candidate.getBecauseAnswer()+")");
+			PreparedStatement ps = conn.prepareStatement(
+					"INSERT INTO EHDOKKAAT " +
+							"(SUKUNIMI, ETUNIMI, PUOLUE, KOTIPAIKKAKUNTA, IKA, MIKSI_EDUSKUNTAAN, MITA_ASIOITA_HALUAT_EDISTAA) "
+					+ "VALUES (?,?,?,?,?,?,?)");
+			ps.setString(1, candidate.getLastName());
+			ps.setString(2, candidate.getFirstName());
+			ps.setString(3, candidate.getPalign());
+			ps.setString(4, candidate.getState());
+			ps.setInt(5, candidate.getAge());
+			ps.setString(6, candidate.getWhyQ());
+			ps.setString(7, candidate.getBecauseAnswer());
+
+			System.out.println(ps);
+			count=ps.executeUpdate();
+			conn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return count;
@@ -173,7 +185,7 @@ public class Dao {
 		int count = 0;		
 		try{  
 			 
-			PreparedStatement stmt = conn.prepareStatement("delete from EHDOKKAAT where id=?");
+			PreparedStatement stmt = conn.prepareStatement("delete from EHDOKKAAT where EHDOKAS_ID=?");
 			stmt.setInt(1,id);  
             count=stmt.executeUpdate();  
               

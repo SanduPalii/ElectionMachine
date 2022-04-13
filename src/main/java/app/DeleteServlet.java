@@ -11,7 +11,10 @@ import javax.servlet.http.HttpSession;
 
 import dao.Dao;
 
-@WebServlet("/DeleteServlet")  
+@WebServlet(
+        name = "DeleteCandidate",
+        urlPatterns = {"/deletecandidate"}
+)
 public class DeleteServlet extends HttpServlet {  
     public void doGet(HttpServletRequest request, HttpServletResponse response)   
              throws ServletException, IOException { 
@@ -21,6 +24,6 @@ public class DeleteServlet extends HttpServlet {
         String sid=request.getParameter("id");  
         int id=Integer.parseInt(sid);  
         dao.delete(id);  
-        response.sendRedirect("ViewServlet");  
+        response.sendRedirect("/showdata");
     }  
 }

@@ -29,11 +29,6 @@ public class AddCandidate extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		doGet(request, response);
-	}
-	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 
@@ -42,22 +37,22 @@ public class AddCandidate extends HttpServlet {
 		 */
 //		RequestDispatcher rd=request.getRequestDispatcher("jsp/showall.jsp");
 //		rd.include(request,  response);
-//		
+//
 		// Read parameters to Model
 		Candidate candidate = readCandidate(request);
-	
+
 		// Create connection
 		Dao dao=new Dao();
-		
+
 		// Save value and query total list
 		dao.saveCandidate(candidate);
 		ArrayList<Candidate> list=dao.readAllCandidate();
-		
+
 		// print output and close connection
 //		printCandidateList(out, list);
 		dao.close();
-		
-		
+
+
 //		out.println("<br><a href='./jsp/showall.jsp'>Back to form</a>");
 
 		/*
